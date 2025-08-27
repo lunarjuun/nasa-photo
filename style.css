@@ -1,9 +1,13 @@
 body {
-  font-family: sans-serif;
+  font-family: 'Mansalva', cursive;
   background: #0b1020;
   color: #f2f4ff;
   padding: 1rem;
   text-align: center;
+}
+
+body.sans {
+  font-family: sans-serif;
 }
 
 #fontChangerBtn {
@@ -16,8 +20,4 @@ img, iframe {
   max-width: 100%;
   border-radius: 8px;
   margin-bottom: 1rem;
-}
-
-.new-font {
-  font-family: 'Mansalva';
 }
