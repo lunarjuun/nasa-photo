@@ -1,28 +1,20 @@
+fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("title").textContent = data.title;
+    document.getElementById("image").src = data.url;
+    document.getElementById("description").textContent = data.explanation;
+  });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const fontChangerBtn = document.getElementById('fontChangerBtn');
+    const contentToChange = document.getElementById('contentToChange');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    fontChangerBtn.addEventListener('click', function() {
+        contentToChange.classList.toggle('new-font');
+    });
+});
 
 
 

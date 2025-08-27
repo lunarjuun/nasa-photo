@@ -6,12 +6,18 @@ body {
   text-align: center;
 }
 
-.desc {
-  text-align: center;
+#fontChangerBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 img, iframe {
   max-width: 100%;
   border-radius: 8px;
   margin-bottom: 1rem;
+}
+
+.new-font {
+  font-family: 'Mansalva';
 }

@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&display=swap" rel="stylesheet">
+
     <title>Dagens bilde fra NASA</title>
 </head>
 <body>
-    <h1>Dagens bilde</h1>
+    <h1 id="contentToChange">Dagens bilde</h1>
 
     <main>
-        <img id="apodImage" alt="dagens bilde fra nasa">
-        <iframe id="apodVideo" width="300" height="300" allowfullscreen hidden></iframe>
+        <img id="image" alt="dagens bilde fra nasa">
         <div class="desc">
         <h2 id="title"></h2>
         <div id="infoBox">
         </div>
-            <p id="explanation"></p>
+            <p id="description"></p>
         </div>
+        
+        <button id="fontChangerBtn">Standard text version</button>
+
     </main>
+
+    <footer>
+        <p style="font-style: italic;" id="contentToChange">Project made and managed by github.com/lunarjuun (^・ω・^ )</p>
+    </footer>
 
 </body>
 <script src="script.js"></script>
