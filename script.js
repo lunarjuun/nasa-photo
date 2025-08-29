@@ -1,4 +1,10 @@
-fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+let currentDate = new Date(); // defaults to today
+
+function formatDate(date) {
+  return date.toISOString().split("T")[0]; // YYYY-MM-DD
+}
+
+fetch("https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=2023-08-15")
   .then(response => response.json())
   .then(data => {
     document.getElementById("title").textContent = data.title;
@@ -6,6 +12,19 @@ fetch("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
     document.getElementById("description").textContent = data.explanation;
   });
 
+// switch to previous day
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+  currentDate.setDate(currentDate.getDate() - 1);
+  fetchApod(formatDate(currentDate));
+});
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+  currentDate.setDate(currentDate.getDate() + 1);
+  fetchApod(formatDate(currentDate));
+});
+
+// switch to next day
 
 document.addEventListener('DOMContentLoaded', function() {
     const fontChangerBtn = document.getElementById('fontChangerBtn');
@@ -18,3 +37,5 @@ document.addEventListener('DOMContentLoaded', function() {
             : "Standard text version";
     });
 });
+
+fetchApod(formatDate(currentDate));
