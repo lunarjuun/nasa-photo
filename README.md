@@ -14,4 +14,12 @@ The project is very straight forward and uses an API to retrieve information fro
 - Since I wanted a font on the website, I considered that it might not be legible for everyone, so I made a button to toggle it back to sans serif.
 - The website works on both mobile and desktop when inspecting.
 
-### 
+---
+
+## How To Use
+### Make Your Own API Key
+An API key is needed for this project to work, and you can make one for free on [NASA's website](https://api.nasa.gov/?ref=beautifulpublicdata.com). Once you have it, replace the ${apiKey} with your real API key.
+
+### Equipment
+- Visual Studio Code (JS, HTML, CSS)
+- API Key
