@@ -4,13 +4,30 @@ function formatDate(date) {
   return date.toISOString().split("T")[0]; // YYYY-MM-DD
 }
 
-fetch("https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=2023-08-15")
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById("title").textContent = data.title;
-    document.getElementById("image").src = data.url;
-    document.getElementById("description").textContent = data.explanation;
-  });
+function fetchApod(date) {
+  fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${date}`)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("title").textContent = data.title;
+      document.getElementById("image").src = data.url;
+      document.getElementById("description").textContent = data.explanation;
+      document.getElementById("date").textContent = `Date: ${data.date}`;
+    })
+    .catch(err => console.error("Error fetching APOD:", err));
+
+    const imageEl = document.getElementById("image");
+    const videoEl = document.getElementById("video");
+
+    if  (data.media_type === "image") {
+      imageEl.src = data.url;
+      imageEl.style.display = "block";
+      videoEl.style.display = "none";
+  } else if (data.media_type === "video") {
+      videoEl.src = data.url;
+      imageEl.style.display = "block";
+      videoEl.style.display = "none";
+  }
+}
 
 // switch to previous day
 
