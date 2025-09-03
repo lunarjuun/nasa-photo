@@ -20,6 +20,6 @@ The project is very straight forward and uses an API to retrieve information fro
 ### Make Your Own API Key
 An API key is needed for this project to work, and you can make one for free on [NASA's website](https://api.nasa.gov/?ref=beautifulpublicdata.com). Once you have it, replace the ${apiKey} with your real API key.
 
-### Equipment
+### Requirements
 - Visual Studio Code (JS, HTML, CSS)
 - API Key
